@@ -1,3 +1,261 @@
+# Reto 6.1 - Manejo de Excepciones del Reto 1
+
+## Descripción
+
+En este reto se agregaron excepciones a los programas desarrollados en el Reto 1, siguiendo el estándar PEP 8 y el uso de tipado estático.
+
+El objetivo fue validar entradas incorrectas, prevenir errores durante la ejecución y manejar situaciones inesperadas utilizando:
+
+- `try`
+- `except`
+- `finally`
+- `raise`
+
+---
+
+# 1. Calculadora de Operaciones Básicas
+
+## Excepciones agregadas
+
+### `ZeroDivisionError`
+
+Se agregó esta excepción para evitar divisiones entre cero.
+
+```python
+if number_2 == 0:
+    raise ZeroDivisionError(
+        "No se puede dividir entre cero"
+    )
+```
+
+### `ValueError`
+
+Se agregó cuando el operador ingresado no es válido.
+
+```python
+raise ValueError(
+    "Ingreso un caracter invalido"
+)
+```
+
+## Manejo de excepciones
+
+```python
+except ValueError as error:
+    print(f"Error: {error}")
+
+except ZeroDivisionError as error:
+    print(f"Error: {error}")
+```
+
+## ¿Qué mejora aporta?
+
+- Evita errores matemáticos inválidos.
+- Informa claramente al usuario.
+- Mantiene el programa funcionando correctamente.
+
+---
+
+# 2. Verificador de Palíndromos
+
+## Excepciones agregadas
+
+### `ValueError` por cadena vacía
+
+```python
+if word == "":
+    raise ValueError(
+        "La palabra no puede estar vacía"
+    )
+```
+
+### `ValueError` por caracteres inválidos
+
+```python
+if not word.isalpha():
+    raise ValueError(
+        "La palabra solo debe contener letras"
+    )
+```
+
+## Manejo de excepciones
+
+```python
+except ValueError as error:
+    print(f"Error: {error}")
+```
+
+## ¿Qué mejora aporta?
+
+- Evita entradas vacías.
+- Impide números o símbolos.
+- Garantiza que la validación del palíndromo sea correcta.
+
+---
+
+# 3. Lista de Números Primos
+
+## Excepciones agregadas
+
+### `ValueError` por entrada vacía
+
+```python
+if user_input.strip() == "":
+    raise ValueError(
+        "La entrada no puede estar vacía"
+    )
+```
+
+### `ValueError` por conversión inválida
+
+```python
+number_list: list[int] = [
+    int(number.strip())
+    for number in user_input.split(",")
+]
+```
+
+Si el usuario escribe texto no numérico, Python genera automáticamente un `ValueError`.
+
+## Manejo de excepciones
+
+```python
+except ValueError as error:
+    print(f"Error: {error}")
+```
+
+## ¿Qué mejora aporta?
+
+- Evita listas vacías.
+- Evita caracteres inválidos.
+- Garantiza que solo se procesen números enteros.
+
+---
+
+# 4. Mayor Suma Consecutiva
+
+## Excepciones agregadas
+
+### `ValueError` por lista insuficiente
+
+```python
+if len(number_list) < 2:
+    raise ValueError(
+        "La lista debe contener al menos dos números"
+    )
+```
+
+### `ValueError` por entrada vacía
+
+```python
+if user_input.strip() == "":
+    raise ValueError(
+        "La entrada no puede estar vacía"
+    )
+```
+
+### `ValueError` por conversión inválida
+
+```python
+numbers: list[int] = [
+    int(number)
+    for number in user_input.split()
+]
+```
+
+## Manejo de excepciones
+
+```python
+except ValueError as error:
+    print(f"Error: {error}")
+```
+
+## ¿Qué mejora aporta?
+
+- Evita operaciones inválidas.
+- Garantiza que existan suficientes números.
+- Previene errores de conversión.
+
+---
+
+# 5. Agrupación de Palabras con los Mismos Caracteres
+
+## Excepciones agregadas
+
+### `ValueError` por lista vacía
+
+```python
+if len(word_list) == 0:
+    raise ValueError(
+        "La lista no puede estar vacía."
+    )
+```
+
+### `TypeError` por elementos no texto
+
+```python
+if not isinstance(word, str):
+    raise TypeError(
+        "Todos los elementos deben ser texto."
+    )
+```
+
+### `ValueError` por palabras vacías
+
+```python
+if clean_word == "":
+    raise ValueError(
+        "Las palabras no pueden estar vacías."
+    )
+```
+
+### `ValueError` por caracteres inválidos
+
+```python
+if not clean_word.isalpha():
+    raise ValueError(
+        "Las palabras solo deben contener letras."
+    )
+```
+
+## Manejo de excepciones
+
+```python
+except ValueError as error:
+    print(f"Error: {error}")
+
+except TypeError as error:
+    print(f"Error: {error}")
+
+except Exception as error:
+    print(f"Error inesperado: {error}")
+```
+
+## ¿Qué mejora aporta?
+
+- Valida correctamente las palabras.
+- Evita entradas inválidas.
+- Permite manejar errores inesperados.
+
+---
+
+# Conclusiones
+
+Con la implementación de excepciones se logró:
+
+- Mejorar la robustez de los programas.
+- Validar entradas incorrectas.
+- Evitar errores matemáticos y lógicos.
+- Mostrar mensajes claros al usuario.
+- Mantener la ejecución controlada.
+
+Todos los programas fueron desarrollados utilizando:
+- Tipado estático
+- Comentarios descriptivos
+- Estándar PEP 8
+- Manejo adecuado de excepciones
+
+
 # Reto 6.2 - Manejo de Excepciones en el paquete Shape
 
 ## Descripción

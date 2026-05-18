@@ -126,6 +126,64 @@ for side in sides:
 
 ---
 
+## 4. Excepción en `Rectangle`
+
+### Problema
+
+Un rectángulo debe tener exactamente 4 vértices.
+
+Si se ingresan más o menos puntos, la figura no puede construirse correctamente.
+
+### Solución
+
+Se agregó una validación para comprobar que el número de vértices sea exactamente 4.
+
+### Código agregado
+
+```python
+if len(vertices) != 4:
+    raise ValueError(
+        "A rectangle must have exactly 4 vertices."
+    )
+```
+
+### ¿Qué evita?
+
+- Construcción incorrecta de rectángulos.
+- Errores al crear los lados.
+- Problemas en el cálculo de área y perímetro.
+
+---
+
+## 5. Excepción en `Equilateral`
+
+### Problema
+
+Un triángulo equilátero debe tener sus tres lados iguales.
+
+Si no se valida esta condición, podrían crearse triángulos incorrectos usando la clase `Equilateral`.
+
+### Solución
+
+Se utilizó el método `is_regular()` para verificar que el triángulo realmente sea equilátero.
+
+### Código agregado
+
+```python
+if not self.is_regular():
+    raise ValueError(
+        "Not an equilateral triangle"
+    )
+```
+
+### ¿Qué evita?
+
+- Crear triángulos no equiláteros.
+- Inconsistencias en la jerarquía de clases.
+- Errores geométricos en figuras especiales.
+
+---
+
 # Beneficios del manejo de excepciones
 
 Gracias a estas validaciones el programa ahora:

@@ -50,7 +50,7 @@ if (
 
 Un triángulo debe tener exactamente 3 vértices.
 
-Además, los tres puntos no pueden estar alineados, porque eso no forma un triángulo válido y puede generar errores matemáticos en:
+Además, los puntos no pueden estar alineados, porque eso no forma un triángulo válido y puede generar errores matemáticos en:
 
 - Fórmula de Herón.
 - Ley de cosenos.
@@ -69,32 +69,20 @@ if len(vertices) != 3:
     )
 ```
 
-### Validación de puntos colineales
+### Validación de triángulo válido
 
 ```python
-area_test = (
-    vertices[0].get_x() * (
-        vertices[1].get_y() - vertices[2].get_y()
-    )
-    + vertices[1].get_x() * (
-        vertices[2].get_y() - vertices[0].get_y()
-    )
-    + vertices[2].get_x() * (
-        vertices[0].get_y() - vertices[1].get_y()
-    )
-)
-
-if abs(area_test) < 1e-6:
+if self.compute_area() == 0:
     raise ValueError(
-        "Triangle vertices cannot be collinear."
+        "The vertices do not form a valid triangle."
     )
 ```
 
 ### ¿Qué evita?
 
 - Triángulos inválidos.
-- Errores en raíces cuadradas negativas.
-- Errores en `math.acos()`.
+- Errores matemáticos.
+- Problemas en el cálculo de ángulos y área.
 
 ---
 

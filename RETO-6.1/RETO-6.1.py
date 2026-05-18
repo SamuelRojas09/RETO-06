@@ -1,5 +1,5 @@
 # Función que realiza operaciones matemáticas básicas
-def operations(number_1: int, number_2: int, character: str) -> float:
+def operations(number_1: int, number_2: int, character: str) -> float | int:
     """
     Realiza una operación matemática básica entre dos números.
 

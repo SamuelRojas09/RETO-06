@@ -263,8 +263,8 @@ En este reto se agregaron excepciones al paquete `Shape` para mejorar la validac
 
 Las excepciones fueron implementadas siguiendo:
 
-- Reglas de estilo **PEP 8**.
-- Uso de **tipado estático** con `typing`.
+- Reglas de estilo PEP 8.
+- Uso de tipado estático con `typing`.
 - Manejo adecuado de errores mediante `raise`.
 
 ---

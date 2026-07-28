@@ -2,7 +2,7 @@
 
 ## Descripción
 
-En este reto se agregaron excepciones a los programas desarrollados en el Reto 1, siguiendo el estándar PEP 8 y el uso de tipado estático.
+En este reto se agregaron excepciones a los programas desarrollados en el Reto 1, siguiendo el estándar PEP 8.
 
 El objetivo fue validar entradas incorrectas, prevenir errores durante la ejecución y manejar situaciones inesperadas utilizando:
 

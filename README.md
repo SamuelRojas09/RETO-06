@@ -250,7 +250,6 @@ Con la implementación de excepciones se logró:
 - Mantener la ejecución controlada.
 
 Todos los programas fueron desarrollados utilizando:
-- Tipado estático
 - Comentarios descriptivos
 - Estándar PEP 8
 - Manejo adecuado de excepciones
